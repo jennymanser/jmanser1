@@ -1,0 +1,149 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>WDV221 Intro Javascript</title>
+
+<script>
+
+
+
+
+
+
+
+</script>
+
+
+
+</head>
+
+<body>
+<h1>WDV221 Intro Javascript</h1>
+<h2>Midterm Exam </h2>
+<h3>Instructions:</h3>
+<p>1. Create a global variable called inputFirstName. </p>
+<script>
+let inputFirstname;   //global variable
+
+</script>
+
+<p>2. Create a global variable called inputLastName. </p>
+
+<script>
+let inputLastname;  //global variable
+</script>
+
+<p>3. Create a global variable called formattedName.</p>
+
+
+<script>
+let formattedName;   //global variable
+</script>
+
+
+<p>4. Create a function called createPipeFormat that will take 2 parameters, concatenate them together with a '|' between them, and return the result. </p>
+	<ul>
+		<li>For example createPipeFormat("First", "Last") would return the string "First|Last" </li>
+	</ul>
+<script>
+function createPipeFormat(firstName, lastName) {
+  return `${firstName} | ${lastName}`
+}
+</script>
+
+
+
+<p>5. Create a function called loadName( ). The function will do the following:</p>
+<ul>
+  <li>Use a prompt to ask the user to enter a first name. </li>
+  <li>Store the value in the inputFirstName variable.</li>
+  <li>Use a prompt to ask the user to enter a last name.</li>
+  <li>Store the value in the inputLastName variable.</li>
+  <li>Call createPipeFormat and store the result in the formattedName variable.</li>
+  <li>Add an event handler to the button below that will run the loadName( ) function. </li>
+</ul>
+<p>
+  
+<button onclick="LoadName()">Click Here</button>
+
+<script>
+function loadName() {
+  inputFirstName = prompt("Enter your first name:");
+  inputLastName = prompt("Enter your last name:");
+  formattedName = createPipeFormat (inputFirstName, inputLastName);
+}
+
+</script>
+
+
+
+<p>6. Create a function called displayFormattedName( ). The function will do the following:</p>
+<ul>
+  <li>It will accept one input parameter</li>
+  <li>The function will display the value of the parameter in an alert with an appropriate message.</li>
+  <li>Add an event handler to the button below that will call the displayFormattedName( ). It will pass the formattedName variable as a parameter into the displayFormattedName( ).</li>
+</ul>
+<p>
+  <input type="button" name="button4" id="button4" value="Display Formatted Name"></p>
+  <button onclick="displayFormattedName()">Click Here</button>
+<script>
+function displayformattedName() {
+   alert (`formatted Name: ${formattedName}`);
+
+}
+
+</script>
+
+
+
+<p>7. Create a function called characterCount( ) and modify the code so the following button will display the number of characters in the formattedName variable. </p>
+<p>
+  <input type="button" name="button5" id="button5" value="Characters in Formatted Name"></p>
+<button onclick="characterCount()">Click Here</button>
+<script>
+
+function characterCount() {
+  const charCount = formattedName.length;
+  document.getElementByID("formattedName").textContent = `Character Count: ${charCount}`;
+
+
+}
+
+</script>
+
+
+<p>8. Create a function called uppercaseName( ) and modify the code so the following button will display the formattedName variable in all uppercase letters in the paragraph below the button</p>
+<p>
+  <input type="button" name="button6" id="button6" value="Uppercase Formatted Name">
+</p>
+<button onclick="upperCaseName()">Click Here</button>
+
+<p id = "uppercaseFormattedDisplay"></p> 
+
+
+<script>
+function uppercaseName() {
+    document.getElementById("formattedName"),textContent = formattedName.toUpperCase();
+}
+
+</script>
+
+<p>9. Link in the external Javascript files provided to do the following: <strong>Points will be deducted if the external javascript files are not used.</strong></p>
+<ul>
+	<li> Display the following amount formatted as currency. 234721.4. </li>	
+	<li> Display today's date at the bottom of the page in the format of "Wednesday January 1, 2020".</li>
+<script>
+ const amount = 234721.4;
+ const formattedAmount = formatCurrency(amount);
+ const currentDate = formatDate(new Date()); 
+
+</script>
+
+ <script src="dateFunctions.js"></script>  
+ <script src="dollarFormatLibrary.js"></script>
+ <script src="formatFunctions.js"></script> 
+   
+</ul>
+</body>
+</html>
