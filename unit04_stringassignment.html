@@ -30,24 +30,27 @@ body {background-color:#d9eff6;
 <p>1. Define a global variable called firstName. Assign it an initial value of &quot;&quot;. </p>
 
 
-let firstName = "&quot;&quot;";
-
-
 <p>2. Define a global variable called emailAddress and assign it the value of your DMACC email address.</p>
 <blockquote>
   <p><em><strong>NOTE</strong>: These variables should be available to any script on this page including within any functions since they have global scope.</em></p>
 </blockquote>
 
-let emailAddress = "jmanser1@dmacc.edu";
+
 
 <p>3. Create a function called getName( ). The function will use a prompt to ask the user to enter a name. Store the result in the firstName variable. Create a button with an onclick event handler to activate this function.</p>
 
 
-<button onclick="getName()">Call function</button>
+<button onclick="getName()">Get Name</button>
+
+
 
 <script>
+
+var firstName = "";
+var emailAddress = "jmanser1@dmacc.edu";
+
 function getName() {
-  let firstName = prompt("Please enter your name: ")
+  firstName = prompt("Please enter your name: ")
     return firstName;
 }
 
@@ -57,20 +60,21 @@ function getName() {
 <p>4. Create a function called displayName( ). The function will use alert( ) to display the value stored in the firstName variable. Create a button with an onclick event handler to activate this function.</p>
 
 
-<button onclick="displayName()">Call function</button>
+<button onclick="displayName()">Display Name</button>
+<button onclick="displayEmailServer()">Display Email Server</button>
+
+
 <script>
-function displayName(){
-  let firstName = yourEmailAddress.split("@")[0]
-  alert("Name part of email: + namePart");
-  return displayName;
+function displayName() {
+ alert("The name stored is" + firstName);
+  
 }
 
 
-<button onclick="displayEmailServer()">Call function</button>
 
 function displayEmailServer(){
-  let serverPart = yourEmailAddress.split("@")[1]
-  alert("Server part of the email: " +severPart)
+  let serverPart = yourEmailAddress.split("@")[1];
+  alert("Server part of the email: " +serverPart)
 
 }
 
@@ -79,12 +83,12 @@ function displayEmailServer(){
 <p>5. Create a function called getEmail( ). The function will use a prompt( ) to ask the user to input an email address. Store the input in the global variable emailAddress. Create a button with an onclick event handler to activate this function.</p>
 
 
-<button onclick="getEmail()">Call function</button>
+<button onclick="getEmail()">Get Email</button>
 
 <script>
 function getEmail(){
    let getEmail = prompt('Enter you email address');
-   return getEmail;
+ 
 }
 </script>
 
@@ -94,34 +98,33 @@ function getEmail(){
   <p><em><strong>For example</strong>: Assign emailAddress variable a value of &quot;aStudent@dmacc.edu&quot;. This function should return display &quot;aStudent&quot;.</em></p>
 </blockquote>
 
+<button onclick="displayEmailName()">Display Email Name</button>
+
 <script>
-<button onclick="displayEmailName()">Call function</button>
+
 function displayEmailName(){
-	let enterName = "";
-    let emailAddress = quot;aStudentdmacc.edu&quot;
-    enterName = prompt("enter a name:")
-  
+	 let firstName = yourEmailAddress.split("@")[0];
+  alert("Name part of email: + firstName");
 }
 </script>
 
-// even with the example of name splitting you went over in class I am really struggling with this one.
+
 
 <p>7. Create a function called displayEmailServer( ). The function will display the email server name after the @ symbol. Create a button with an onclick event handler to activate this function.</p>
 <blockquote>
   <p><em><strong>For example</strong>: Given the same value for emailAddress variable. This function should display "&quot;"dmacc.edu&quot;. Do not include the @ symbol.</em></p>
 </blockquote>
 
-<button onclick="displayEmailServer()">Show email Server</button>	
-<script>
+
+
+/*
 function displayEmailServer(){
 	let enterName = "";
     let emailAddress = "aStudentdmacc.edu";
     enterName = prompt("enter a name:")
 }
+*/
 
-</script>
-// even with the example of name splitting you went over in class I am really struggling with this one.
-<p>&nbsp;</p>
-<p>&nbsp;</p>
+
 </body>
 </html>

@@ -3,17 +3,9 @@
 <head>
 <meta charset="utf-8">
 <title>WDV221 Intro Javascript</title>
-
-<script>
-
-
-
-
-
-
-
-</script>
-
+<script src="dateFunctions.js"></script>  
+<script src="currencyFormatFunctions.js"></script>
+<script src="formatFunctions.js"></script> 
 
 
 </head>
@@ -70,7 +62,7 @@ function createPipeFormat(firstName, lastName) {
 <script>
 function loadName() {
   inputFirstName = prompt("Enter your first name:");
-  inputLastName = prompt("Enter your last name:");
+  inputlastName = prompt("Enter your last name:");
   formattedName = createPipeFormat (inputFirstName, inputLastName);
 }
 
@@ -85,10 +77,10 @@ function loadName() {
   <li>Add an event handler to the button below that will call the displayFormattedName( ). It will pass the formattedName variable as a parameter into the displayFormattedName( ).</li>
 </ul>
 <p>
-  <input type="button" name="button4" id="button4" value="Display Formatted Name"></p>
-  <button onclick="displayFormattedName()">Click Here</button>
+ 
+  <button onclick="displayFormattedName()">Display Formatted name</button>
 <script>
-function displayformattedName() {
+function displayFormattedName() {
    alert (`formatted Name: ${formattedName}`);
 
 }
@@ -99,15 +91,13 @@ function displayformattedName() {
 
 <p>7. Create a function called characterCount( ) and modify the code so the following button will display the number of characters in the formattedName variable. </p>
 <p>
-  <input type="button" name="button5" id="button5" value="Characters in Formatted Name"></p>
-<button onclick="characterCount()">Click Here</button>
+ 
+<button onclick="characterCount()">CharacterCount</button>
 <script>
 
 function characterCount() {
   const charCount = formattedName.length;
-  document.getElementByID("formattedName").textContent = `Character Count: ${charCount}`;
-
-
+  alert(formattedName.lemgth);
 }
 
 </script>
@@ -117,14 +107,14 @@ function characterCount() {
 <p>
   <input type="button" name="button6" id="button6" value="Uppercase Formatted Name">
 </p>
-<button onclick="upperCaseName()">Click Here</button>
+
 
 <p id = "uppercaseFormattedDisplay"></p> 
 
 
 <script>
 function uppercaseName() {
-    document.getElementById("formattedName"),textContent = formattedName.toUpperCase();
+    document.getElementById("uppercaseFormattedDisplay").innerContent = formattedName.toUpperCase();
 }
 
 </script>
@@ -136,13 +126,13 @@ function uppercaseName() {
 <script>
  const amount = 234721.4;
  const formattedAmount = formatCurrency(amount);
- const currentDate = formatDate(new Date()); 
+ const currentDate = `${getCurrentDayOfweek()} ${getCurrentMonthName()} ${getCurrentDate()}, ${getCurrentYear()}`
+ document.write("<p>" + formattedAmount + "</p>");
+ document.write("<p>" + currentDate + "</p>");
 
 </script>
 
- <script src="dateFunctions.js"></script>  
- <script src="dollarFormatLibrary.js"></script>
- <script src="formatFunctions.js"></script> 
+
    
 </ul>
 </body>
