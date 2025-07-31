@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+
+<head>
+
+</head>
+<html>
+
+<body onload="">
+
+	<h1 id="Heading1" class="">WDV221</h1>
+
+	<style>
+
+
+	</style>
+
+
+	<script>
+
+		function ValidateForm() {
+
+		}
+
+
+
+	</script>
+
+	<h2> Create New User </h2>
+
+	<label for="userEmail">Email:</label>
+	<input type="text" id="userEmail" />
+	<span id="errorMessage" style="color:red;"></span><br><br>
+	<label for="userPassword">Password:</label>
+	<input type="password" id="userPassword" onkeyup="checkPasswordStrength()" />
+	<span id="passwordStrength"></span><br><br>
+	<button onclick="validateEmail()">Submit</button>
+	<button onclick="resetForm()">Reset</button>
+	<script>
+		
+			function validateEmail() {
+			const emailInput = document.getElementById('userEmail');
+			const errorMessage = document.getElementById('errorMessage');
+			const email = emailInput.value;
+			if (!email.includes('@')) {
+				errorMessage.textContent = 'Email must contain "@"';
+			emailInput.classList.add('error');
+			} else {
+				errorMessage.textContent = '';
+			emailInput.classList.remove('error');
+			}
+		}
+			function resetForm() {
+				document.getElementById('userEmail').value = '';
+			document.getElementById('userPassword').value = '';
+			document.getElementById('errorMessage').textContent = '';
+			document.getElementById('passwordStrength').textContent = '';
+			document.getElementById('userEmail').classList.remove('error');
+		}
+			function checkPasswordStrength() {
+			const password = document.getElementById('userPassword').value;
+			const strengthSpan = document.getElementById('passwordStrength');
+			if (password.length < 5) {
+				strengthSpan.textContent = 'Weak';
+			strengthSpan.style.color = 'red';
+			} else if (password.length < 10) {
+				strengthSpan.textContent = 'Medium';
+			strengthSpan.style.color = 'orange';
+			} else {
+				strengthSpan.textContent = 'Strong';
+			strengthSpan.style.color = 'green';
+			}
+		}
+	</script>
+	<h2> Instructions </h2>
+	<ol>
+		<li>Create an email validation function that is triggered from the button click even and does the following:
+		</li>
+		<ol>
+			<li>
+				Gets the email address entered in the text box and performs validation check for an "@"
+			</li>
+			<li>
+				Gives an error message if the email is missing an "@". The message should be displayed in the
+				errorMessage span.
+			</li>
+			<li>
+				Sets a solid 2px red border around the userEmail text box
+			</li>
+			<li>
+				Clears the errorMessage span and resets the border of userEmail if there are no errors. This should also
+				happen when the reset button is pressed.
+			</li>
+		</ol>
+		<li>
+			Create a function called checkPasswordStrength that triggers on the keyUp of the userPassword text box.
+		</li>
+		<ol>
+			<li>If the length of the password is less than 5 characters display the word "Weak" in red in the
+				passwordStrength span</li>
+			<li>If the length of the password is greater than 5 characters but less than 10 display the word "Medium" in
+				yellow in the passwordStrength span</li>
+			<li>If the length of the password is greater than 10 characters display the word "Strong" in green in the
+				passwordStrength span</li>
+		</ol>
+	</ol>
+
+</body>
+
+</html>
