@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>WDV221 Style Object-CSS Interactions In Class Exercises</title>
+<style type="text/css">
+<!--
+.style1 {color: #FF0000}
+-->
+</style>
+</head>
+
+<body>
+<h1>WDV221 Intro Javascript</h1>
+<h3>Style Object - CSS Interactions - In Class Exercises</h3>
+<p>Please modify this page to create the following Dynamic HMTL effects. </p>
+
+
+<p id='color'>1. Click this paragraph to change the font color to red.</p>
+
+
+<p id='center'>2. Mouseover this paragraph to center the H3 element containing "CSS Interaction"</p>
+
+
+<p id='left'>3. Click the button to left align the H3 element. </p>
+<button onclick="left()">Submit</button>
+
+
+
+<p id='fontF'>4. Mouseover this paragraph to change the font to a font of you choice. 
+  
+<p id='defaultFont'>5. Click on this paragraph to return the font to the default font.</p>
+
+<p id='size'>6. Click on the button to make the word SALE font size 24. </p>
+
+<p>
+  <label>
+  <input type="submit" name="button2" id="button2" value="Submit" />
+  </label>
+</p>
+
+<p>7. Click on the button to return the word to its original size.</p>
+<p>
+  <label>
+    <input type="submit" name="button3" id="button3" value="Submit" />
+  </label>
+</p>
+
+<p id='background'>8. Use an eventhandler of your choice on this paragraph to make the paragraph background color yellow. </p>
+
+<p id='hide'>9. Use an onclick event to hide the Frog image shown below.</p>
+
+<p id='show'>10. Use the following button to make the Frog image shown below reappear.</p>
+<p>
+  <input type="submit" name="button4" id="button4" value="Submit" />
+</p>
+
+<p>11. Mouseover the Frong image to make its height and width double its original size. </p>
+<p><img src="frog.jpg" width="100" height="100" /></p>
+
+<p>12. Use a click event on the Frog image to make it return to original size. </p>
+
+<p id='border1'>13. Doubleclick on this paragraph to place a border around this paragraph.</p>
+
+<p id='oborder'>14. Use an event handler of your choice to remove the border from the previous paragraph. </p>
+
+<p id='togglecolor'>15. Mouseover this paragraph to turn its background color to green. When you mouseoff the paragraph return it to its normal color. </p>
+
+<script>
+        let color=document.getElementById('color');
+        color.addEventListener("click", function(){ 
+          document.getElementById('color').style.color="red"});
+
+        let center=document.getElementById('center');
+        center.addEventListener("mouseover", function(){ document.getElementById('center').style.textAlign="CSS Interaction"});
+
+        function left(){
+            document.getElementById('CSS Interaction').style.textAlign="left";
+        }
+        
+
+        let fontF=document.getElementById('fontF');
+        fontF.addEventListener("mouseover", function(){ document.getElementById('fontF').style.fontFamily="fantasy"});
+
+        let defaultFont=document.getElementById('defaultFont');
+        defaultFont.addEventListener("click", function(){ document.getElementById('fontF').style.fontFamily="monospace"});
+
+        function size(){
+            document.getElementById('SALE').style.fontSize="24px";
+        }
+
+        function osize(){
+            document.getElementById('SALE').style.fontSize="16px";
+            
+        }
+
+        let background=document.getElementById('background');
+        background.addEventListener("click",function(){ document.getElementById('background').style.backgroundColor="yellow"});
+
+        let hide=document.getElementById('hide');
+        hide.addEventListener("click",function(){ document.getElementById('frog').style.display="none"});
+
+        function show(){
+            document.getElementById('frog').style.display="block";
+        }
+
+        let frog=document.getElementById('frog');
+        frog.addEventListener("mouseover",function(){ document.getElementById('frog').style.width="200%";
+        document.getElementById('frog').style.height="200%";});
+        frog.addEventListener("click",function(){ document.getElementById('frog').style.width="auto";});
+
+        let border1=document.getElementById('border1');
+        border1.addEventListener("dblclick",function(){ document.getElementById('border1').style.border="3px solid black"});
+
+        let oborder=document.getElementById('oborder');
+        oborder.addEventListener("dblclick",function(){ document.getElementById('border1').style.border="none"});
+        
+        let togglecolor=document.getElementById('togglecolor');
+        togglecolor.addEventListener("mouseover",function(){document.getElementById('togglecolor').style.backgroundColor="green";});
+
+        togglecolor.addEventListener("mouseover",function(){document.getElementById('togglecolor').style.backgroundColor="white";});
+       
+</script>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</body>
+</html>
